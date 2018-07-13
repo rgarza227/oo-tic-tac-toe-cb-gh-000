@@ -75,6 +75,67 @@ class toc_tac_toe
 
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
+  end
 
+  def won?
+    win_combinations.each do |win_combination|
+      if @board[win_combination[0]] == "X" && @board[win_combination[1]] == "X" && @board[win_combination[2]] == "X"
+        return win_combination
+      elsif @board[win_combination[0]] == "O" && @board[win_combination[1]] == "O" && @board[win_combination[2]] == "O"
+        return win_combination
+      else
+        false
+      end 
+    end 
+  end
 
+  def full?
+    @board.each do |i|
+      if @board[i] == " " || @board.i == ""
+        false
+      else
+        true 
+      end 
+    end 
+  end 
+
+  def draw?
+    if full? && !won?
+      true
+    else
+      false
+    end 
+  end 
+
+  def over?
+    if won? || full?
+      true
+    else
+      false 
+    end
+  end 
+
+  def winner
+    if won?
+      won?[0]
+    else
+      false
+    end 
+  end 
+   
+  def play
+    until over?
+      turn
+    end
+
+    if won?
+      puts "Congradualtions #{winner}!"
+    elsif draw?
+      puts "Cat's game!"
+    else
+      false
+    end 
+  end
+
+    
 end # TIC TAC TOE CLASS
