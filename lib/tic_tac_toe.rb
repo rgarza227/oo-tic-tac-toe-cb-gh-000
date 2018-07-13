@@ -34,7 +34,7 @@ class toc_tac_toe
   def move(index,token = "X")
     @board[index] = token
   end
-  
+
   def position_taken?(index)
     if @board[index] == "X" || @board[index] == "O"
       true
@@ -72,7 +72,9 @@ class toc_tac_toe
   def turn_count
     @board.count{ |token| token == "X" || token == "O"}
   end
-  
-      
-  
+
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
+
+
 end # TIC TAC TOE CLASS
