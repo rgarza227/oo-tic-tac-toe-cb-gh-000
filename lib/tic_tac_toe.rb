@@ -24,4 +24,17 @@ class toc_tac_toe
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
-end  
+  end
+
+  def input_to_index(input)
+    input = input.to_i
+    index = input - 1
+  end
+
+  def move(index,token = "X")
+    @board[index] = token
+  end
+  
+end # TIC TAC TOE CLASS
+
+
