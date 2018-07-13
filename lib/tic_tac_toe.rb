@@ -85,8 +85,8 @@ class tic_tac_toe
         return win_combination
       else
         false
-      end 
-    end 
+      end
+    end
   end
 
   def full?
@@ -94,35 +94,35 @@ class tic_tac_toe
       if @board[i] == " " || @board.i == ""
         false
       else
-        true 
-      end 
-    end 
-  end 
+        true
+      end
+    end
+  end
 
   def draw?
     if full? && !won?
       true
     else
       false
-    end 
-  end 
+    end
+  end
 
   def over?
     if won? || full?
       true
     else
-      false 
+      false
     end
-  end 
+  end
 
   def winner
     if won?
       won?[0]
     else
       false
-    end 
-  end 
-   
+    end
+  end
+
   def play
     until over?
       turn
@@ -134,8 +134,8 @@ class tic_tac_toe
       puts "Cat's game!"
     else
       false
-    end 
+    end
   end
 
-    
+
 end # TIC TAC TOE CLASS
