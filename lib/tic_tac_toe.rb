@@ -35,6 +35,44 @@ class toc_tac_toe
     @board[index] = token
   end
   
+  def position_taken?(index)
+    if @board[index] == "X" || @board[index] == "O"
+      true
+    else
+      false
+    end
+  end
+
+  def valid_move?(index)
+    if index.between?(0,8)
+      if position_taken?
+        false
+      else
+        true
+      end
+    else
+      false
+    end
+  end
+
+  def turn
+    puts "Enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+
+    if valid_move?(index)
+      move(index,"X")###########
+      display_board
+    else
+      puts "Invalid move. Try Again."
+      turn
+    end
+  end
+
+  def turn_count
+    @board.count{ |token| token == "X" || token == "O"}
+  end
+  
+      
+  
 end # TIC TAC TOE CLASS
-
-
